@@ -1,0 +1,21 @@
+.mb-3 {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#reveal-login {
+    width: 450px;
+    top: 10%;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    padding-bottom: 2%;
+    background-color:rgba(245,245,245);
+    display: block;
+    z-index: 16;
+    margin: 0 auto;
+    border-radius: 5%;
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    transition: 1s linear;
+    
+};

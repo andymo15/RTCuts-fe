@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import Navbar from './components/Navbar/Navbar';
+// import Carousel from './components/Carousel/Carousel';
 import axios from 'axios';
 
 
@@ -29,7 +30,10 @@ class App extends Component {
     }
   render(){
     return(
+      <>
       <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
+      {/* <Carousel /> */}
+      </>
     )
   }
 }

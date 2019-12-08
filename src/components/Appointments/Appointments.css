@@ -1,3 +1,6 @@
+.apptBtn{
+    float:right;
+}
 .apptCalendar{
     margin: 0 auto;
     background-color: whitesmoke;
@@ -9,4 +12,8 @@
     height: 300px;
     padding-top: 5%;
     margin: 0 auto;
+}
+
+.dropdown {
+    border: 1px solid black;
 }

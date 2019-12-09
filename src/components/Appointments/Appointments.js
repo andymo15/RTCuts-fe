@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
-// import Moment from 'moment';
-// import { extendMoment } from 'moment-range';
-// import Calendar from 'react-input-calendar';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-// import { DropdownList } from 'react-widgets';
-// import DropdownList from 'react-widgets/lib/DropdownList';
 import axios from 'axios';
 import './Appointments.css';
 
 // const moment = extendMoment(Moment);
+const dateFormat = require('dateformat');
+const now = new Date();
 
 
 class Appointments extends Component{
     state={
-        date:"",
+        date: new Date(),
         time: "",
     }
     createOptions = () => {

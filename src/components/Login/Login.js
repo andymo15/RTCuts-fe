@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
@@ -21,10 +22,12 @@ class Login extends Component {
             withCredentials:true,
         })
             .then((res)=>{
-                console.log(res);
                 this.props.setCurrentUser(res.data.data);
+                console.log(res.data);
                 document.getElementById('reveal-login').style.display="none";
+                this.props.history.push('/profile');
             })
+            .catch((err)=>console.log(err));
     };
     render(){
         if(!this.props.showLogin){
@@ -53,4 +56,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -34,17 +34,26 @@ class ProfileContainer extends Component {
         .catch((err) => console.log(err));
         }
 
+        updateAppt = (updatedAppt) =>{
+            this.setState({
+                appts: updatedAppt
+            })
+        }
+
         displayAppts = appts => {
             return appts.map(appt=>{
                 return(
                     <>
                     <ShowAppt
                     apptData={appt}
-                    key={appt.uid} />
+                    key={appt.uid}
+                    updateAppt={this.updateAppt} />
                     </>
                 )
             })
         }
+
+
 
     render(){
         return(

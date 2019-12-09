@@ -3,10 +3,10 @@ import Calendar from 'react-calendar';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import axios from 'axios';
-import './Appointments.css';
+import '../Appointments/Appointments.css';
 
 
-class Appointments extends Component{
+class EditApptModal extends Component{
     state={
         date: new Date(),
         time: "",
@@ -46,17 +46,21 @@ class Appointments extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
-        axios.post(`${process.env.REACT_APP_API_URL}/appts/`, this.state,
-        {withCredentials: true})
-            .then((res)=>{
-                console.log(res);
-            })
+        const userId = localStorage.getItem('uid');
+        axios.put(`${process.env.REACT_APP_API_URL}/appts/${userId}`, this.state,{
+            withCredentials: true,
+        })
+        .then((res)=>{
+            console.log(res);
+            this.props.updateAppt(res.data.data)
+            document.getElementById('reveal-edit').style.display='none';
+        })
+        .catch((err)=> console.log(err))
     };
 
     render(){
         return(
-            <div className="calendar">
+            <div className="calendar reveal-edit">
                 <Calendar 
                 className="apptCalendar"
                 onChange={this.dateChange}
@@ -70,5 +74,5 @@ class Appointments extends Component{
     }
 }
 
-export default Appointments;
+export default EditApptModal;
 

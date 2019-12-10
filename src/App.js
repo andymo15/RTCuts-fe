@@ -2,7 +2,6 @@ import React,{ Component } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { withRouter } from 'react-router-dom';
 import Routes from './config/routes';
-// import Carousel from './components/Carousel/Carousel';
 import axios from 'axios';
 
 
@@ -27,7 +26,7 @@ class App extends Component {
         .then(res => {
           console.log(res);
           this.setState({currentUser: null});
-          this.props.history.push('/home');
+          this.props.history.push('/');
         })
         .catch(err => console.log(err));
     }

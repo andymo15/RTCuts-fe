@@ -1,5 +1,13 @@
 .profCard{
     border: 1px solid black;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 25%;
+    padding-left: 3%;
+}
+
+.prof-container {
+    width: 350px;
+    position: fixed;
 }

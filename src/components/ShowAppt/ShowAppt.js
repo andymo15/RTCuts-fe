@@ -6,7 +6,6 @@ import './ShowAppt.css';
 class ShowAppt extends Component {
     state={
         showEdit: false,
-        deletedStatus: false,
     }
 
     showEdit = (event) => {
@@ -19,13 +18,17 @@ class ShowAppt extends Component {
     render() {
         return(
             <>
+            <section className="appt-section row">
             <div className='appt-container'>
                 <p>Date: {this.props.apptData.date && this.props.apptData.date.split('T')[0]}</p>
                 {/* <p>Date: {this.props.apptData.date}</p> */}
                 <p>Time: {this.props.apptData.time && this.props.apptData.time.label}</p>
-                <button onClick={(event)=>this.showEdit()}> Edit </button>
+                <button onClick={(event)=>this.showEdit()}>Edit</button>
                 <button type="submit" onClick={()=>this.props.handleDelete(this.props.apptData._id)}>Delete</button>
-                <EditAppt apptData={this.props.apptData} updateAppt={this.props.updateAppt} showEdit={this.state.showEdit} updateCompleted={this.props.updateCompleted} />
+            </div>
+            </section>
+            <div className="edit-appt">
+            <EditAppt apptData={this.props.apptData} updateAppt={this.props.updateAppt} showEdit={this.state.showEdit} updateCompleted={this.props.updateCompleted} />
             </div>
             </>
         )

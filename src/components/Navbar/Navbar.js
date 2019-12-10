@@ -44,7 +44,7 @@ class Navbar extends React.Component {
                 : 
                 <>
                 <li className="nameTag"> RT Cuts</li>
-                <li><NavLink className="nav-link" exact to="/profile" > Profile </NavLink></li>
+                <li><NavLink className="nav-link"  to="/profile" > Profile </NavLink></li>
                 <li><button onClick={(event)=>this.logout()} className="header-btn" type="button" > Logout </button> </li>
                 </>
                     }

@@ -1,8 +1,36 @@
-/* .column {
-    width: 33%;
+.column {
+    width: 50%;
 }
- */
 
-.upcomingAppt{
-    padding-right: 20%;
+.row{
+    margin-right:0;
+}
+
+.upcomingAppt {
+    margin-top: 4.3%;
+    /* display: grid; */
+    /* grid-template-columns: 1fr; */
+    max-height: 600px;
+    background-image: url('../../content/barber-bg3.jpg');
+    background-size: cover;
+}
+
+
+.apptRow {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+.calendar-column{
+    margin-top: 4.5%;
+    padding-right: 5%;
+    text-align: center;
+    padding-top: 2%;
+    background-image: url('../../content/barber-bg.jpg');
+    background-size: cover;
+    height:550px;
+}
+
+.schedule-appt{
+    text-align:center;
 }

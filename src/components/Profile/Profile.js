@@ -16,11 +16,13 @@ class Profile extends Component {
 
     render(){
         return(
+            <section className="prof-container">
             <div className="profCard">
                 <p>Name: {this.props.profile.name} </p>
                 <p>Email: {this.props.profile.email}</p>
                 <p>Phone Number: {this.props.profile.phoneNumber} </p>
             </div>
+            </section>
         )
     }
 };

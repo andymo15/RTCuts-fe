@@ -50,7 +50,7 @@ class Appointments extends Component{
         axios.post(`${process.env.REACT_APP_API_URL}/appts/`, this.state,
         {withCredentials: true})
             .then((res)=>{
-                console.log(res);
+                this.props.handleCompleted(res.data.data);
             })
     };
 

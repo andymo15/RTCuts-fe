@@ -8,7 +8,7 @@ import HomePage from '../components/HomePage/HomePage';
 
 export default () => (
     <Switch>
-        <Route path='/home' component={HomePage} />
+        <Route exact path='/' component={HomePage} />
         <Route path='/appointment' component={Appointments} />
         <Route path='/profile' component={ProfileContainer} />
     </Switch>

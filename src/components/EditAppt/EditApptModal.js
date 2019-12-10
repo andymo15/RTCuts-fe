@@ -4,7 +4,7 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import axios from 'axios';
 import '../Appointments/Appointments.css';
-
+import './EditModal.css';
 
 class EditApptModal extends Component{
     state={
@@ -44,6 +44,11 @@ class EditApptModal extends Component{
         console.log(time)
     }
 
+    handleCancel= (event) => {
+        event.preventDefault();
+        document.getElementById('reveal-edit').style.display='none'
+    }
+
     handleSubmit = (event) => {
         event.preventDefault();
         const apptId = this.props.apptData._id
@@ -69,6 +74,7 @@ class EditApptModal extends Component{
                 />
             <Dropdown onChange={this.timeChange} value={this.state.time} options={this.createOptions()} />
             <button className="apptBtn" type="submit" onClick={this.handleSubmit}>Confirm</button>
+            <button className="apptBtn" type="click" onClick={this.handleCancel}> Cancel </button>
             </div>
         );
     }

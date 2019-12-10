@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Profile from '../../components/Profile/Profile';
+import { withRouter } from 'react-router-dom';
+// import Profile from '../../components/Profile/Profile';
 import ShowAppt from '../../components/ShowAppt/ShowAppt';
+import Appointments from '../../components/Appointments/Appointments';
 import axios from 'axios';
 import './ProfileContainer.css';
 
@@ -42,6 +44,15 @@ class ProfileContainer extends Component {
         //     })
         // }
 
+        handleCompleted =(data) => {
+            let newAppts = [...this.state.appts];
+            newAppts.push(data)
+            this.setState({
+                appts: newAppts,
+            })
+        }
+
+        
         updateCompleted = (data) => {
             let updatedAppts = [...this.state.appts];
             let index = updatedAppts.findIndex(element => element._id === data._id)
@@ -71,7 +82,8 @@ class ProfileContainer extends Component {
                     key={appt._id}
                     updateAppt={this.updateAppt}
                     updateCompleted={this.updateCompleted}
-                    handleDelete={this.handleDelete} />
+                    handleDelete={this.handleDelete}
+                    />
                     </>
                 )
             })
@@ -80,14 +92,22 @@ class ProfileContainer extends Component {
 
 
     render(){
-        console.log(this.state.appts[0])
         return(
             <>
             <div className="row">
-            <Profile profile={this.state.profile} className="column"/>
-            <div className="column upcomingAppt"> 
-            {this.displayAppts(this.state.appts)}
-            </div>
+                {/* <div className="column">
+                    <Profile profile={this.state.profile}/>
+                </div> */}
+                <div className="column calendar-column">
+                <h2>Schedule an Appointment</h2>
+                <Appointments handleCompleted={this.handleCompleted} />
+                </div>
+                <div className="column upcomingAppt">
+                    <h2 className="schedule-appt">Your Upcoming Appointments</h2>
+                    <div className="apptRow">
+                    {this.displayAppts(this.state.appts)}
+                </div>
+                </div>
             </div>
             </>
         )
@@ -95,4 +115,4 @@ class ProfileContainer extends Component {
 }
 
 
-export default ProfileContainer;
+export default withRouter(ProfileContainer);

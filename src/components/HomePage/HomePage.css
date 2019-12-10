@@ -12,6 +12,11 @@
 padding-top: 4.5%;
 }
 
+.container-holder {
+    display: flex;
+    justify-content: center;
+}
+
 .img-container img{
 width: 175px;
 height: 250px;
@@ -31,5 +36,48 @@ padding-left: 5%;
 }
 
 .pricingMenu{
+    padding-top: 6%;
     padding-bottom: 30%;
+    text-align: center;
+}
+
+.title {
+    font-size: 46px;
+    font-family: 'College Bold', bold;
+    color: white;
+}
+
+.menu-items{
+    font-size: 26px;
+    font-family:'College Bold', bold;
+    color: white;
+}
+
+.pole {
+    height: 400px;
+    width: 250px;
+    position: absolute;
+    /* padding-top: 10%; */
+    margin-top: 8%;
+}
+
+.pole img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.pole1 {
+    height: 400px;
+    width: 250px;
+    float:right;
+    position: relative;
+    /* padding-top: 10%; */
+    margin-top: 8%;
+}
+
+.pole1 img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 }

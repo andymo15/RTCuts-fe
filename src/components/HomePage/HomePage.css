@@ -1,0 +1,35 @@
+
+.board{
+    height: 105vh;
+    width: 50vw;
+    margin: 0 auto;
+    /* z-index: 10; */
+    background-size: cover;
+    position: relative;
+}
+
+.board-container{
+padding-top: 4.5%;
+}
+
+.img-container img{
+width: 175px;
+height: 250px;
+padding: 1%;
+margin: 0 auto;
+padding-right: 2%;
+padding-left: 5%;
+}
+
+.board video {
+    height: 35vh;
+    width: 20vw;
+}
+
+.row{
+    display: table;
+}
+
+.pricingMenu{
+    padding-bottom: 30%;
+}

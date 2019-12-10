@@ -8,7 +8,7 @@ import './Appointments.css';
 
 class Appointments extends Component{
     state={
-        date: new Date(),
+        date: "",
         time: "",
     }
     createOptions = () => {

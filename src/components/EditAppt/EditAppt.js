@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import EditApptModal from '../EditAppt/EditApptModal';
-import axios from 'axios';
 
 class EditAppt extends Component{
     state={
-        date:'',
+        date: "",
         time:'',
     }
 
@@ -13,7 +12,7 @@ class EditAppt extends Component{
             return null;
         }
         return(
-            <EditApptModal updateAppt={this.props.updateAppt}/>
+            <EditApptModal apptData={this.props.apptData} updateAppt={this.props.updateAppt} updateCompleted={this.props.updateCompleted}/>
         )
     }
 };

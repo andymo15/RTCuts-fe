@@ -27,6 +27,7 @@ class App extends Component {
         .then(res => {
           console.log(res);
           this.setState({currentUser: null});
+          this.props.history.push('/');
         })
         .catch(err => console.log(err));
     }

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import EditAppt from '../EditAppt/EditAppt';
+import './ShowAppt.css';
 
 
 class ShowAppt extends Component {
     state={
         showEdit: false,
+        deletedStatus: false,
     }
 
     showEdit = (event) => {
@@ -12,17 +14,20 @@ class ShowAppt extends Component {
             showEdit: !prevState.showEdit
         })
     )};
+
+
     render() {
         return(
+            <>
             <div className='appt-container'>
-                <h2>Your Upcoming Appointment Info!</h2>
-                <p>{this.props.apptData.date}</p>
-                {/* <p>{this.props.apptData.time.value}</p>   */}
+                <p>Date: {this.props.apptData.date && this.props.apptData.date.split('T')[0]}</p>
+                {/* <p>Date: {this.props.apptData.date}</p> */}
+                <p>Time: {this.props.apptData.time && this.props.apptData.time.label}</p>
                 <button onClick={(event)=>this.showEdit()}> Edit </button>
-                <button className="apptBtn" type="submit" onClick={this.handleDelete}>Delete</button>
-                <EditAppt updateAppt={this.props.updateAppt} showEdit={this.state.showEdit} />
-                
+                <button type="submit" onClick={()=>this.props.handleDelete(this.props.apptData._id)}>Delete</button>
+                <EditAppt apptData={this.props.apptData} updateAppt={this.props.updateAppt} showEdit={this.state.showEdit} updateCompleted={this.props.updateCompleted} />
             </div>
+            </>
         )
     }
 }

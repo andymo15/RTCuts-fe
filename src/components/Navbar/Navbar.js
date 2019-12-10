@@ -1,7 +1,8 @@
 import React from 'react';
-import './Navbar.css';
 import Register from '../Register/Register';
+import { NavLink } from 'react-router-dom';
 import Login from '../Login/Login';
+import './Navbar.css';
 
 class Navbar extends React.Component {
     state={
@@ -20,9 +21,11 @@ class Navbar extends React.Component {
             showLogin: !prevState.showLogin
         })
     )};
+
     logout = (event) => {
         this.props.logout();
     }
+
     render(){
         return(
             <>
@@ -41,6 +44,7 @@ class Navbar extends React.Component {
                 : 
                 <>
                 <li className="nameTag"> RT Cuts</li>
+                <li><NavLink className="nav-link" exact to="/profile" > Profile </NavLink></li>
                 <li><button onClick={(event)=>this.logout()} className="header-btn" type="button" > Logout </button> </li>
                 </>
                     }

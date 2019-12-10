@@ -8,7 +8,7 @@ import '../Appointments/Appointments.css';
 
 class EditApptModal extends Component{
     state={
-        date: new Date(),
+        date: "",
         time: "",
     }
     createOptions = () => {
@@ -46,13 +46,14 @@ class EditApptModal extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const userId = localStorage.getItem('uid');
-        axios.put(`${process.env.REACT_APP_API_URL}/appts/${userId}`, this.state,{
+        const apptId = this.props.apptData._id
+        axios.put(`${process.env.REACT_APP_API_URL}/appts/${apptId}`, this.state,{
             withCredentials: true,
         })
         .then((res)=>{
-            console.log(res);
-            this.props.updateAppt(res.data.data)
+            console.log(res.data.data);
+            this.props.updateCompleted(res.data.data)
+            // this.props.updateAppt(res.data.data)
             document.getElementById('reveal-edit').style.display='none';
         })
         .catch((err)=> console.log(err))
@@ -60,12 +61,11 @@ class EditApptModal extends Component{
 
     render(){
         return(
-            <div className="calendar reveal-edit">
+            <div className="calendar" id="reveal-edit">
                 <Calendar 
                 className="apptCalendar"
                 onChange={this.dateChange}
                 value={this.state.date}
-
                 />
             <Dropdown onChange={this.timeChange} value={this.state.time} options={this.createOptions()} />
             <button className="apptBtn" type="submit" onClick={this.handleSubmit}>Confirm</button>

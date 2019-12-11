@@ -37,13 +37,13 @@ class Navbar extends React.Component {
                 <ul>
                     {!this.props.currentUser ?
                 <>
-                <li className="nameTag"> RT Cuts</li>
+                <li> <NavLink className="nameTag nav-link" to="/"> RT Cuts </NavLink> </li>
                 <li><button onClick={(event)=>this.showRegistration()} className="header-btn"> Sign Up </button> </li>
                 <li><button onClick={(event)=>this.showLogin()} className="header-btn"  > Login </button>  </li>
                 </>
                 : 
                 <>
-                <li className="nameTag"> RT Cuts</li>
+                <li> <NavLink className="nameTag nav-link" to="/"> RT Cuts </NavLink> </li>
                 <li><NavLink className="nav-link"  to="/profile" > Profile </NavLink></li>
                 <li><button onClick={(event)=>this.logout()} className="header-btn" type="button" > Logout </button> </li>
                 </>

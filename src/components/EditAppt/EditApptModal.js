@@ -70,8 +70,8 @@ class EditApptModal extends Component{
                 value={this.state.date}
                 />
             <Dropdown onChange={this.timeChange} value={this.state.time} options={this.createOptions()} />
-            <button className="apptBtn" type="submit" onClick={this.handleSubmit}>Confirm</button>
-            <button className="apptBtn" type="click" onClick={this.handleCancel}> Cancel </button>
+            <button className="apptBtn1" type="submit" onClick={this.handleSubmit}>Confirm</button>
+            <button className="apptBtn1" type="click" onClick={this.handleCancel}> Cancel </button>
             </div>
         );
     }

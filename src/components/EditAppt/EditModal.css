@@ -4,9 +4,10 @@
     z-index: 15;
 }
 
-.apptBtn {
+.apptBtn1 {
     all: unset;
     float:right;
+    border: 1px solid black;
 }
 
 .edit-appt{

@@ -32,7 +32,6 @@ class ProfileContainer extends Component {
             this.setState({
                 appts: res.data.data,
             });
-            console.log(res);
         })
         .catch((err) => console.log(err));
         }

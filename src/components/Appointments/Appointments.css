@@ -1,5 +1,7 @@
 .apptBtn{
-    float:right;
+    width:100%;
+    border: 1px solid black;
+    background-color: white;
 }
 .apptCalendar{
     margin: 0 auto;

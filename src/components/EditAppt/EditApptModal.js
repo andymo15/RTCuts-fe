@@ -36,12 +36,10 @@ class EditApptModal extends Component{
 
     dateChange = (date) => {
         this.setState({ date });
-        console.log(date);
     }
 
     timeChange = (time) => {
         this.setState({ time });
-        console.log(time)
     }
 
     handleCancel= (event) => {
@@ -56,7 +54,6 @@ class EditApptModal extends Component{
             withCredentials: true,
         })
         .then((res)=>{
-            console.log(res.data.data);
             this.props.updateCompleted(res.data.data)
             // this.props.updateAppt(res.data.data)
             document.getElementById('reveal-edit').style.display='none';

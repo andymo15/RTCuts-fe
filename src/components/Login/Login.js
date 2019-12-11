@@ -17,13 +17,11 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
         axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {
             withCredentials:true,
         })
             .then((res)=>{
                 this.props.setCurrentUser(res.data.data);
-                console.log(res.data);
                 document.getElementById('reveal-login').style.display="none";
                 this.props.history.push('/profile');
             })

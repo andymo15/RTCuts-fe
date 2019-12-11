@@ -23,7 +23,6 @@ class ProfileContainer extends Component {
             this.setState({
                 profile: res.data.data
             });
-            console.log(res.data.data);
         })
         .catch((err)=> console.log(err));
 
@@ -67,7 +66,6 @@ class ProfileContainer extends Component {
                 withCredentials: true,
             })
             .then((res)=>{
-                console.log("Success")
                 let updatedAppts = this.state.appts.filter(appt=> appt._id !== id)
                 this.setState({appts: updatedAppts});
             })

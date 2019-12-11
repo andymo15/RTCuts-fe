@@ -11,7 +11,6 @@ class App extends Component {
     }
 
     setCurrentUser=(userId)=>{
-      console.log(userId);
       this.setState({
         currentUser: userId
       });
@@ -24,7 +23,6 @@ class App extends Component {
       withCredentials: true,
       })
         .then(res => {
-          console.log(res);
           this.setState({currentUser: null});
           this.props.history.push('/');
         })

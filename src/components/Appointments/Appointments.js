@@ -36,17 +36,14 @@ class Appointments extends Component{
 
     dateChange = (date) => {
         this.setState({ date });
-        console.log(date);
     }
 
     timeChange = (time) => {
         this.setState({ time });
-        console.log(time)
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
         axios.post(`${process.env.REACT_APP_API_URL}/appts/`, this.state,
         {withCredentials: true})
             .then((res)=>{
@@ -61,7 +58,6 @@ class Appointments extends Component{
                 className="apptCalendar"
                 onChange={this.dateChange}
                 value={this.state.date}
-
                 />
             <Dropdown onChange={this.timeChange} value={this.state.time} options={this.createOptions()} />
             <button className="apptBtn" type="submit" onClick={this.handleSubmit}>Confirm</button>

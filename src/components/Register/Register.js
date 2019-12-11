@@ -19,10 +19,8 @@ class Register extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
         axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
             .then((res)=>{
-                console.log(res);
                 document.getElementById('registerModal').style.display='none';
             })
             .catch((err)=>{console.log(err)});

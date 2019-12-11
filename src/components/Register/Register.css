@@ -33,3 +33,7 @@ text-align: right;
 .label{
     width: 135px;
 }
+
+.registerBtn{
+    width: 100%;
+}

@@ -6,6 +6,10 @@
     background-color: rgba(255, 255, 153);
 }
 
+.appt-container p{
+    font-size: 16px;
+    font: 'Just Another Hand', Helvetica, sans-serif;
+}
 .appt-section{
     margin-left: 2%;
     margin-right: 2%; 

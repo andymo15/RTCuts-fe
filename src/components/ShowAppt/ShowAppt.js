@@ -21,7 +21,6 @@ class ShowAppt extends Component {
             <section className="appt-section row">
             <div className='appt-container'>
                 <p>Date: {this.props.apptData.date && this.props.apptData.date.split('T')[0]}</p>
-                {/* <p>Date: {this.props.apptData.date}</p> */}
                 <p>Time: {this.props.apptData.time && this.props.apptData.time.label}</p>
                 <button onClick={(event)=>this.showEdit()}>Edit</button>
                 <button type="submit" onClick={()=>this.props.handleDelete(this.props.apptData._id)}>Delete</button>
